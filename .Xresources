@@ -4,6 +4,7 @@ URxvt.url-select.button: 1
 URxvt.url-select.launcher: /usr/bin/firefox
 URxvt.url-select.underline: true
 URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.lineSpace: 1
 
 URxvt*256-color: true
 URxvt*fading: 5
@@ -14,6 +15,6 @@ URxvt*background: rgba:ffff/fffe/fddd/ffff
 URxvt*foreground: rgba:0000/0000/0000/ffff
 URxvt*transparent: false
 URxvt*scrollBar: false
-URxvt*font: xft:DejaVu Sans Mono-10
+URxvt*font: xft:DejaVu Sans Mono-11
 XTerm*termName: xterm-256color
 URxvt*termName: rxvt-unicode

@@ -40,6 +40,7 @@ filetype plugin on
 filetype indent on
 map <silent> <F4> :silent :NERDTreeToggle<CR>
 imap <silent> <F4> :silent :NERDTreeToggle<CR>
+let NERDTreeIgnore=['__pycache__']
  
 set dir=~/.vim/swap
 
@@ -85,7 +86,7 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 colorscheme mine 
-set colorcolumn=92
+set colorcolumn=120
 let g:vcoolor_lowercase = 1
 let g:vcoolor_disable_mappings = 1
 vmap <Leader>ka :VCoolIns ra<CR>
@@ -116,3 +117,6 @@ let g:TabTagTrigger = {'name':'TabTagTriger','pattern':"", 'enter_callback':"Tab
 
 "call tab#TabShowTrigger()
 call tab#TabAddTrigger(g:TabTagTrigger)
+set guifont=Monospace\ 11
+set tags=tags
+let g:colorizer_auto_color = 1
