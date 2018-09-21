@@ -1,0 +1,17 @@
+import os
+import sys
+try:
+    import readline
+except ImportError:
+    print "Module readline not available."
+else:
+    import rlcompleter
+    import atexit
+    histfile = os.path.join(os.environ["HOME"], ".python_history")
+    try:
+        readline.read_history_file(histfile)
+    except:
+        print "No history found"
+    atexit.register(readline.write_history_file, histfile)
+    readline.parse_and_bind("tab: complete")
+    del os, histfile, readline, sys

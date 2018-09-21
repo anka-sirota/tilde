@@ -1,0 +1,22 @@
+#! /bin/bash
+
+XOSD_CMD_PIPE="osd_cat --pos=bottom --align=right --delay=4 --color=red --shadow=3 --shadowcolour=black -O 5 -u black --font=-*-fixed-*-*-*-*-20-*-*-*-*-*-iso10646-*"
+event=$1
+arg1=$2
+arg2=$3
+
+if [ $event = "MSG" ]; then
+  case "$arg1" in
+    IN)
+      echo "$arg2 wrote" | $XOSD_CMD_PIPE > /dev/null 2>&1
+      ;;
+    MUC)
+      echo "New message in MUC $arg2" | $XOSD_CMD_PIPE > /dev/null 2>&1
+      ;;
+    OUT)
+      ;;
+  esac
+#elif [ $event = "STATUS" ]; then
+  #echo "<$arg2> has changed status to: [$arg1]" | $XOSD_CMD_PIPE > /dev/null 2>&1
+  #echo > /dev/null
+fi
