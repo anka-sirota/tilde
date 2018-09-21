@@ -99,26 +99,16 @@ nmap <Leader>k :VCoolor<CR>
 "and will also sets VIM working directory to that directory node
 let g:NERDTreeChDirMode=2
 
-"below is reload GTAGS, ctags demo code.
-function! TabReloadCGtag()
-	"reload GTAGS in current directory
-	cs kill 0
-	"gnu global produce GTAGS, more useful than cscope
-	cs add GTAGS
-	"reload tags in current directory
-	set tags=tags
-endfunction
-
 "some action when enter a tab
 function! TabEnterTag(nr)
-	"echo "tab ". a:nr . " enter"
-	call TabReloadCGtag()
+   "echo "tab ". a:nr . " enter"
+   call TabReloadCGtag()
 endfunction
 
 "some action when leave a tab
 function! TabLeaveTag(nr)
-	"echo "tab ". a:nr . " leaves"
-	"nothing
+   "echo "tab ". a:nr . " leaves"
+   "nothing
 endfunction
 
 "don't care about pattern field for now
@@ -126,8 +116,3 @@ let g:TabTagTrigger = {'name':'TabTagTriger','pattern':"", 'enter_callback':"Tab
 
 "call tab#TabShowTrigger()
 call tab#TabAddTrigger(g:TabTagTrigger)
-
-"when first open a tab, the tab enter trigger will not be called,the following code load tags automatically when open a file
-autocmd BufEnter *.[ch] call TabReloadCGtag()
-autocmd BufEnter *.cpp call TabReloadCGtag()
-autocmd BufEnter *.java call TabReloadCGtag()
