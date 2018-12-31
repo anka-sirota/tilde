@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xsetroot -name "$(xbacklight -get | sed 's/\.[0-9]*//')% | $(cpupower frequency-info | grep 'current CPU' | grep -v 'Unable' | sed -re 's/^.* ([0-9.]+ (MHz|GHz)).*$/\1/') | $(sensors | grep temp1 | sed  -r "s/temp1:[ +]*([0-9. C]+).*/\1/g" | xargs) | $(date +'%a %b %d %Y %H:%M') | $(acpi | awk '{print $4}' | sed -re 's/,//g')"
+sleep 5s
