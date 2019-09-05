@@ -113,7 +113,7 @@ endfunction
 let g:TabTagTrigger = {'name':'TabTagTriger','pattern':"", 'enter_callback':"TabEnterTag", 'leave_callback':"TabLeaveTag" }
 
 "call tab#TabShowTrigger()
-call tab#TabAddTrigger(g:TabTagTrigger)
+"call tab#TabAddTrigger(g:TabTagTrigger)
 set guifont=Monospace\ 11
 set tags=tags
 autocmd FileType tf,scss,pug,php,inc,module,yaml,javascript,perl,t,typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
