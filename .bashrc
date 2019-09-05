@@ -17,6 +17,9 @@ alias ga='git add'
 alias st='git status'
 alias gf='git diff'
 alias gfc='git diff --cached'
+alias gff='git flow feature'
+alias gffs='git flow feature start'
+alias gffp='git flow feature publish'
 alias commit='git commit'
 alias push='git push'
 alias pull='git pull'
@@ -90,6 +93,9 @@ export PS1='\[\033[1;38;5;56m\]\u@\h \[\033[00;22m\]\W \$ \[\033[00m\]'
 
 # extra variables
 #for i in `ls $HOME/.vars/.??*`; do echo "Loading $i"; . $i ; done
+export WORKON_HOME=~/envs
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+source /usr/bin/virtualenvwrapper.sh
 
 export PATH=$PATH:~/go/bin
 export GOPATH=~/go
