@@ -19,11 +19,7 @@ set viminfo='20,\"50  " Read/write a .viminfo file, don't store more
 set whichwrap=b,s,<,>,[,] " End of line cursor support
 set nobackup          " Do not create backup files
 set ruler
-set shiftwidth=4      " What you get for ^D
-set tabstop=4         " Same as shiftwidth
-set softtabstop=4
-set showmatch
-set expandtab
+set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 set incsearch
 set hlsearch
 set ignorecase
@@ -57,8 +53,9 @@ nmap <S-Insert> "*P
 nmap <A-v> "+p
 set helplang=en
 syntax enable
+autocmd FileType python map <buffer> <F7> :Black<CR>
 autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
-let g:flake8_cmd="/usr/bin/flake8"
+let g:flake8_cmd="/home/anka/envs/supply/bin/flake8"
 map <Leader>kk :sign unplace *<CR>
 map <Leader>td <Plug>TaskList
 map <Leader>g :GundoToggle<CR>
@@ -119,4 +116,6 @@ let g:TabTagTrigger = {'name':'TabTagTriger','pattern':"", 'enter_callback':"Tab
 call tab#TabAddTrigger(g:TabTagTrigger)
 set guifont=Monospace\ 11
 set tags=tags
-let g:colorizer_auto_color = 1
+autocmd FileType tf,scss,pug,php,inc,module,yaml,javascript,perl,t,typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+silent! iunmap <Tab>
+set spell
