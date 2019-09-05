@@ -7,6 +7,7 @@ export HISTCONTROL=ignoreboth
 export BROWSER="firefox"
 export PYTHONSTARTUP=~/.pythonrc
 export PAGER=less
+export TERM=xterm-256color
 
 # workaround EOL weirdness on terminal resize
 shopt -s checkwinsize
@@ -106,6 +107,12 @@ alias redwm='cd ~/dwm; updpkgsums; makepkg -fi --noconfirm && killall dwm && sta
 # docket shortcuts
 dock() {
     docker exec -it $1 bash
+}
+docksh() {
+    docker exec -it $1 sh
+}
+iwatch() {
+    while inotifywait -e close_write . -r; do $@ ; done
 }
 alias dock=dock
 alias drmc='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
