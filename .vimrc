@@ -53,7 +53,6 @@ nmap <S-Insert> "*P
 nmap <A-v> "+p
 set helplang=en
 syntax enable
-autocmd FileType python map <buffer> <F7> :Black<CR>
 autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
 let g:flake8_cmd="/home/anka/envs/supply/bin/flake8"
 map <Leader>kk :sign unplace *<CR>
