@@ -19,6 +19,7 @@ xrandr --dpi 107 &
 setxkbmap us
 setxkbmap -option grp:caps_toggle us,ru
 sh ~/.fehbg &
+redshift -P -O 2800 &
 #exec wmii
 
 # Statusbar loop
